@@ -42,9 +42,9 @@ namespace Photos.Core.Services
             var request = new RestRequest(resource);
 
             var response = await client.GetAsync(request);
-            if (response.IsSuccessful)
+            if (response?.IsSuccessful == true)
                 return JsonConvert.DeserializeObject<IEnumerable<Photo>>(
-                    response?.Content,
+                    response.Content,
                     new JsonSerializerSettings
                     {
                         NullValueHandling = NullValueHandling.Ignore,
