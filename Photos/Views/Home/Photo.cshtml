@@ -1,0 +1,12 @@
+﻿@using Photos.UI.ViewModels
+@model PhotoPageViewModel
+
+<div class="row">
+    <div class="col-9">
+        <div class="photo-show">
+            <img src="@Model.Photo.Url" class="photo-thumbnail img-fluid" />
+            <div class="photo-title">@Model.Photo.Title</div>
+        </div>
+    </div>
+    @Html.Partial("Shared/_AlbumList", Model)
+</div>

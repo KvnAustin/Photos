@@ -1,0 +1,87 @@
+body {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    line-height: 1.6875;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+strong {
+    font-weight: 600;
+}
+
+a {
+    color: #1b75bb;
+    text-decoration: none;
+}
+
+.photo-preview {
+    margin: 0 0 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+    .photo-preview .photo-thumbnail {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .photo-preview .photo-title {
+        margin: 10px 0 0;
+        text-align: center;
+        height: 22px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .photo-preview .photo-link {
+        margin: 10px 0 0;
+        font-size: 12px;
+        text-align: center;
+    }
+
+.photo-show {
+    margin: 0 0 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+    .photo-show .photo-thumbnail {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .photo-show .photo-title {
+        margin: 10px 0 0;
+        text-align: center;
+    }
+
+.link-album {
+    padding: 5px 10px;
+    display: block;
+}

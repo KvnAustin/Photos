@@ -1,0 +1,24 @@
+﻿@using Photos.UI.ViewModels
+@model PhotosPageViewModel
+
+<div class="row">
+    <div class="col">
+        <h2>Album #@Model.AlbumId</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-9">
+        <div class="row">
+            @foreach (var photo in Model.Photos)
+            {
+                <div class="col-6 col-md-4">
+                    <div class="photo photo-preview">
+                        <img src="@photo.ThumbnailUrl" class="photo-thumbnail img-fluid" />
+                        <div class="photo-title">@photo.Title</div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    @Html.Partial("Shared/_AlbumList", Model)
+</div>

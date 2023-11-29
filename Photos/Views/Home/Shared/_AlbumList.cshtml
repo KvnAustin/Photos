@@ -1,0 +1,11 @@
+﻿@using Photos.UI.ViewModels
+@model BasePageViewModel
+
+<div class="col">
+    <a href="/" class="link-album">All Photos</a>
+
+    @foreach (var albumId in Model.AlbumIds)
+    {
+        <a href="@("/Home/Album/" + @albumId)" class="link-album">Album @albumId</a>
+    }
+</div>
