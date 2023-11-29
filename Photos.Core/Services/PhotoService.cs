@@ -13,6 +13,8 @@ namespace Photos.Core.Services
         public async Task<Photo> Get(int id)
         {
             var photos = await Get($"photos?id={id}");
+            if (photos == null)
+                return null;
 
             return photos.FirstOrDefault();
         }
@@ -38,16 +40,18 @@ namespace Photos.Core.Services
         {
             var client = new RestClient("https://jsonplaceholder.typicode.com");
             var request = new RestRequest(resource);
-            
+
             var response = await client.GetAsync(request);
-            
-            return JsonConvert.DeserializeObject<IEnumerable<Photo>>(
-                response?.Content, 
-                new JsonSerializerSettings
-                {
-                    NullValueHandling = NullValueHandling.Ignore,
-                    MissingMemberHandling = MissingMemberHandling.Ignore
-                });
+            if (response.IsSuccessful)
+                return JsonConvert.DeserializeObject<IEnumerable<Photo>>(
+                    response?.Content,
+                    new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore,
+                        MissingMemberHandling = MissingMemberHandling.Ignore
+                    });
+
+            return null;
         }
 
         private IEnumerable<int> GetAlbumIdsFromPhotos(IEnumerable<Photo> photos)
